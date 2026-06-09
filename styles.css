@@ -1,0 +1,516 @@
+/* ===== Figma tokens — node 6155:18806 ===== */
+:root {
+  --c-bg: #17305a;
+  --c-blue: #307fe2;
+  --c-blue-24: rgba(48, 127, 226, 0.24);
+  --c-orange: #ff5c39;
+  --c-red: #f04438;
+  --c-white: #ffffff;
+  --c-black: #1a1a2e;
+  --c-gray: #667085;
+  --c-benefits: linear-gradient(164.56deg, #1a325d 3.4%, #0a1526 90%);
+  --w: 1080;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: 'Inter', sans-serif; background: #0a1526; color: var(--c-white); }
+img { display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+/* vw helper: Figma px → responsive */
+.page { display: flex; justify-content: center; min-height: 100vh; }
+
+.story {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  overflow: hidden;
+}
+
+/* ===== Story background — Figma 6155:18806, 6178:257 ===== */
+.story__decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* 6178:265 — chart pattern, faqat o‘rta qismda */
+.story__pattern {
+  position: absolute;
+  top: 28%;
+  left: -31%;
+  width: 208%;
+  opacity: 0.1;
+}
+
+.story__pattern img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 6155:18812 — ellipse, top-right (yumshoq, to‘rtburchak emas) */
+.story__ellipse {
+  position: absolute;
+  top: -27%;
+  right: -35%;
+  width: 130%;
+  max-width: 1408px;
+}
+
+.story__ellipse img {
+  width: 100%;
+  height: auto;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  padding: 6.6vw 6.3vw 5.6vw;
+}
+
+@media (min-width: 1080px) {
+  .hero { padding: 71px 68px 60px; }
+}
+
+/* solid bg layer behind decor */
+.story::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c-bg);
+  z-index: 0;
+}
+
+/* Logo — 6155:18885 */
+.logo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin-bottom: 4.3vw;
+}
+
+@media (min-width: 1080px) { .logo { margin-bottom: 46px; } }
+
+.logo__mark {
+  width: 4.7vw;
+  height: 4.4vw;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1080px) { .logo__mark { width: 51px; height: 48px; } }
+
+.logo__name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 5.6vw;
+  line-height: 1;
+}
+
+@media (min-width: 1080px) { .logo__name { font-size: 60px; } }
+
+/* Pill — 6161:37174 */
+.pill {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .7vw;
+  background: var(--c-blue-24);
+  border-radius: 1.85vw;
+  padding: 1.5vw 1.85vw;
+  margin-bottom: 4.4vw;
+  max-width: 62vw;
+}
+
+@media (min-width: 1080px) {
+  .pill { border-radius: 20px; padding: 16px 20px; margin-bottom: 48px; max-width: 670px; gap: 8px; }
+}
+
+.pill--center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  max-width: 100%;
+  margin-bottom: 5.6vw;
+  text-align: center;
+  padding: 1.5vw 2.8vw;
+}
+
+@media (min-width: 1080px) { .pill--center { margin-bottom: 60px; } }
+
+.pill__accent {
+  font-family: 'Onest', sans-serif;
+  font-weight: 500;
+  font-size: 4.1vw;
+  color: var(--c-red);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+@media (min-width: 1080px) { .pill__accent { font-size: 44px; } }
+.pill__accent--lg { font-size: 5.6vw; }
+@media (min-width: 1080px) { .pill__accent--lg { font-size: 60px; } }
+
+.pill__text {
+  font-family: 'Onest', sans-serif;
+  font-weight: 600;
+  font-size: 2.2vw;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+@media (min-width: 1080px) { .pill__text { font-size: 24px; } }
+.pill__text--lg { font-weight: 500; font-size: 3.7vw; }
+@media (min-width: 1080px) { .pill__text--lg { font-size: 40px; } }
+
+/* Title — 6155:18834 */
+.title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Onest', sans-serif;
+  font-weight: 700;
+  font-size: 5.9vw;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 4.6vw;
+  max-width: 90vw;
+}
+
+@media (min-width: 1080px) { .title { font-size: 64px; margin-bottom: 50px; max-width: 968px; } }
+
+.title em { font-style: normal; font-weight: 900; color: var(--c-red); }
+
+/* Hero body — features + photo */
+.hero__body {
+  position: relative;
+  z-index: 1;
+  min-height: 48vw;
+  margin-bottom: 1.85vw;
+}
+
+@media (min-width: 1080px) { .hero__body { min-height: 520px; margin-bottom: 20px; } }
+
+/* Checklist — 6178:206, left 55.62px in Figma */
+.checklist {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8vw;
+  width: 45.2%;
+  margin-left: -1.15vw;
+}
+
+@media (min-width: 1080px) { .checklist { gap: 30px; width: 488px; margin-left: -12px; } }
+
+.checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 2.4vw;
+}
+
+@media (min-width: 1080px) { .checklist__item { gap: 26px; } }
+.checklist__item--top { align-items: flex-start; }
+
+.checklist__icon {
+  flex-shrink: 0;
+  width: 8.4vw;
+  height: 8.4vw;
+  background: var(--c-blue);
+  border-radius: 1.48vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1080px) {
+  .checklist__icon { width: 91px; height: 91px; border-radius: 16px; }
+}
+
+.checklist__icon img {
+  width: 4.2vw;
+  height: 4.2vw;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@media (min-width: 1080px) { .checklist__icon img { width: 45px; height: 45px; } }
+
+.checklist__item p {
+  font-weight: 500;
+  font-size: 3.7vw;
+  line-height: 1.2;
+}
+
+@media (min-width: 1080px) { .checklist__item p { font-size: 40px; } }
+
+/* Hero photo — 6155:18828 */
+.hero__photo {
+  position: absolute;
+  top: -4.6vw;
+  left: 9.4%;
+  width: 111%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (min-width: 1080px) { .hero__photo { top: -50px; } }
+
+.hero__photo img {
+  width: 100%;
+  height: auto;
+}
+
+/* ===== Broker cards ===== */
+.cards {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.85vw;
+  padding: 5.6vw 0 4.6vw;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar { display: none; }
+
+@media (min-width: 1080px) { .cards { gap: 20px; padding: 60px 0 50px; } }
+
+.card {
+  flex: 0 0 27.8vw;
+  scroll-snap-align: center;
+  background: var(--c-white);
+  border-radius: 1.85vw;
+  border: 2px solid rgba(48,127,226,.35);
+  box-shadow: 0 .74vw 3vw rgba(48,127,226,.25);
+  padding: 2.2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3vw;
+  position: relative;
+}
+
+@media (min-width: 1080px) {
+  .card { flex: 0 0 300px; border-radius: 20px; padding: 24px; gap: 14px; box-shadow: 0 8px 32px rgba(48,127,226,.25); }
+}
+
+.card--best {
+  border: 3px solid var(--c-orange);
+  box-shadow: 0 .74vw 3vw rgba(255,92,57,.35);
+  padding-top: 3vw;
+  transform: translateY(-1.1vw);
+}
+
+@media (min-width: 1080px) {
+  .card--best { padding-top: 32px; transform: translateY(-12px); box-shadow: 0 8px 32px rgba(255,92,57,.35); }
+}
+
+.card__crown {
+  position: absolute;
+  top: -2vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4.4vw;
+  height: 4.4vw;
+  background: var(--c-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1080px) { .card__crown { top: -22px; width: 48px; height: 48px; } }
+.card__crown svg { width: 55%; height: 55%; }
+
+.card__head { display: flex; align-items: center; gap: .9vw; flex-wrap: wrap; }
+@media (min-width: 1080px) { .card__head { gap: 10px; } }
+
+.card__avatar {
+  width: 3.7vw; height: 3.7vw;
+  border-radius: 50%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  padding: .8vw; flex-shrink: 0;
+}
+
+@media (min-width: 1080px) { .card__avatar { width: 40px; height: 40px; padding: 9px; } }
+
+.card__avatar--blue { background: #e8f2fd; }
+.card__avatar--blue span { width: .65vw; height: .65vw; border-radius: 50%; background: var(--c-blue); }
+.card__avatar--orange { background: #fff0eb; }
+.card__avatar--orange span { width: .65vw; height: .65vw; border-radius: 50%; background: var(--c-orange); }
+@media (min-width: 1080px) { .card__avatar--blue span, .card__avatar--orange span { width: 7px; height: 7px; } }
+
+.card__name { font-weight: 600; font-size: 2vw; color: var(--c-black); }
+@media (min-width: 1080px) { .card__name { font-size: 22px; } }
+
+.card__rating {
+  display: inline-flex; align-items: center; gap: 2px;
+  margin-left: auto; font-weight: 500; font-size: 1.7vw; color: var(--c-black);
+}
+.card__rating svg { width: 1.85vw; height: 1.85vw; }
+@media (min-width: 1080px) { .card__rating { font-size: 18px; } .card__rating svg { width: 20px; height: 20px; } }
+
+.card__price {
+  font-family: 'Onest', sans-serif; font-weight: 700;
+  font-size: 3.3vw; line-height: 1.1; color: var(--c-black);
+}
+@media (min-width: 1080px) { .card__price { font-size: 36px; } }
+.card__price--accent { color: var(--c-orange); }
+.card__price small { font-family: 'Inter', sans-serif; font-weight: 500; font-size: .55em; }
+
+.card__term { font-size: 1.7vw; color: var(--c-gray); margin-bottom: .7vw; }
+@media (min-width: 1080px) { .card__term { font-size: 18px; margin-bottom: 8px; } }
+
+.card__btn {
+  width: 100%; padding: 1.3vw; border-radius: 1.1vw;
+  font-weight: 500; font-size: 1.7vw; text-align: center;
+}
+@media (min-width: 1080px) { .card__btn { padding: 14px; border-radius: 12px; font-size: 18px; } }
+.card__btn--outline { background: var(--c-white); border: 2px solid var(--c-blue); color: var(--c-blue); }
+.card__btn--fill { background: var(--c-orange); color: var(--c-white); }
+
+/* ===== Actions — CTA markazda, telefon o'ngda (Figma) ===== */
+.actions {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5.6vw;
+  min-height: 12vw;
+}
+
+@media (min-width: 1080px) {
+  .actions { margin-bottom: 60px; min-height: 130px; }
+}
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 1.85vw; }
+@media (min-width: 1080px) { .btn { gap: 20px; } }
+
+.btn--cta {
+  flex-shrink: 0;
+  width: 54vw;
+  height: 11.1vw;
+  background: var(--c-orange);
+  border-radius: 2.78vw;
+  padding: 0 3.7vw;
+  font-weight: 500;
+  font-size: 4.6vw;
+  color: var(--c-white);
+  white-space: nowrap;
+}
+
+@media (min-width: 1080px) {
+  .btn--cta {
+    width: 583px;
+    height: 120px;
+    border-radius: 30px;
+    padding: 0 40px;
+    font-size: 50px;
+  }
+}
+
+.btn--block {
+  width: 54vw;
+  max-width: 583px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.btn--call {
+  position: absolute;
+  right: 4.1vw;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  width: 12vw;
+  height: 12vw;
+  background: var(--c-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1080px) {
+  .btn--call { right: 44px; width: 130px; height: 130px; }
+}
+
+.btn__arrow {
+  width: 4.6vw; height: 4.6vw;
+  transform: rotate(90deg); flex-shrink: 0;
+}
+
+@media (min-width: 1080px) { .btn__arrow { width: 50px; height: 50px; } }
+
+.btn--call img { width: 4.5vw; height: 4.5vw; object-fit: contain; }
+@media (min-width: 1080px) { .btn--call img { width: 49px; height: 49px; } }
+
+.domain {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3.7vw;
+  line-height: 1.4;
+}
+
+@media (min-width: 1080px) { .domain { font-size: 40px; } }
+
+/* ===== Benefits — 6161:37126 ===== */
+.benefits {
+  position: relative;
+  z-index: 2;
+  background: var(--c-benefits);
+  padding: 12.2vw 9vw 7.4vw;
+  overflow: hidden;
+}
+
+@media (min-width: 1080px) { .benefits { padding: 132px 97px 80px; } }
+
+.checklist--benefits {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 7.4vw;
+}
+
+@media (min-width: 1080px) { .checklist--benefits { margin-bottom: 80px; } }
+
+.checklist--benefits .checklist__item {
+  align-items: flex-start;
+  width: 100%;
+}
+
+.checklist--benefits .checklist__item p {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.benefits .btn--block {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1081px) {
+  .story { box-shadow: 0 0 60px rgba(0,0,0,.45); }
+}
