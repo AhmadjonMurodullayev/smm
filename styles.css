@@ -203,59 +203,87 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 @media (min-width: 1080px) { .hero__body { min-height: 520px; margin-bottom: 20px; } }
 
-/* Checklist — 6178:206, left 55.62px in Figma */
+/* Checklist — 6178:206 */
 .checklist {
   position: relative;
   z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 2.8vw;
-  width: 45.2%;
+}
+
+/* Hero checklist — kichikroq, keng qator (Figma 6178:206) */
+.checklist--hero {
+  gap: 2vw;
+  width: 58%;
+  max-width: 560px;
   margin-left: -1.15vw;
 }
 
-@media (min-width: 1080px) { .checklist { gap: 30px; width: 488px; margin-left: -12px; } }
+@media (min-width: 1080px) {
+  .checklist--hero {
+    gap: 22px;
+    width: 488px;
+    max-width: none;
+    margin-left: -12px;
+  }
+}
 
 .checklist__item {
   display: flex;
   align-items: center;
-  gap: 2.4vw;
+  gap: 2vw;
 }
 
-@media (min-width: 1080px) { .checklist__item { gap: 26px; } }
+@media (min-width: 1080px) { .checklist__item { gap: 20px; } }
 .checklist__item--top { align-items: flex-start; }
+
+.checklist--hero .checklist__icon {
+  width: 6.5vw;
+  height: 6.5vw;
+  border-radius: 1.1vw;
+}
+
+@media (min-width: 1080px) {
+  .checklist--hero .checklist__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+  }
+}
 
 .checklist__icon {
   flex-shrink: 0;
-  width: 8.4vw;
-  height: 8.4vw;
   background: var(--c-blue);
-  border-radius: 1.48vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.checklist--hero .checklist__icon img {
+  width: 3.2vw;
+  height: 3.2vw;
+}
+
 @media (min-width: 1080px) {
-  .checklist__icon { width: 91px; height: 91px; border-radius: 16px; }
+  .checklist--hero .checklist__icon img { width: 32px; height: 32px; }
 }
 
 .checklist__icon img {
-  width: 4.2vw;
-  height: 4.2vw;
   flex-shrink: 0;
   object-fit: contain;
 }
 
-@media (min-width: 1080px) { .checklist__icon img { width: 45px; height: 45px; } }
-
-.checklist__item p {
+.checklist--hero .checklist__item p {
   font-weight: 500;
-  font-size: 3.7vw;
-  line-height: 1.2;
+  font-size: 3.2vw;
+  line-height: 1.15;
+  flex: 1;
+  min-width: 0;
 }
 
-@media (min-width: 1080px) { .checklist__item p { font-size: 40px; } }
+@media (min-width: 1080px) {
+  .checklist--hero .checklist__item p { font-size: 28px; }
+}
 
 /* Hero photo — 6155:18828 */
 .hero__photo {
@@ -436,7 +464,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .btn--call {
   position: absolute;
-  right: 4.1vw;
+  right: 1.5vw;
   top: 50%;
   transform: translateY(-50%);
   flex-shrink: 0;
@@ -450,7 +478,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 @media (min-width: 1080px) {
-  .btn--call { right: 44px; width: 130px; height: 130px; }
+  .btn--call { right: 16px; width: 130px; height: 130px; }
 }
 
 .btn__arrow {
@@ -491,19 +519,56 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   width: 100%;
   max-width: 100%;
   margin-bottom: 7.4vw;
+  gap: 5vw;
 }
 
-@media (min-width: 1080px) { .checklist--benefits { margin-bottom: 80px; } }
+@media (min-width: 1080px) {
+  .checklist--benefits { margin-bottom: 80px; gap: 54px; }
+}
+
+.checklist--benefits .checklist__icon {
+  width: 8.4vw;
+  height: 8.4vw;
+  border-radius: 1.48vw;
+}
+
+@media (min-width: 1080px) {
+  .checklist--benefits .checklist__icon {
+    width: 91px;
+    height: 91px;
+    border-radius: 16px;
+  }
+}
+
+.checklist--benefits .checklist__icon img {
+  width: 4.2vw;
+  height: 4.2vw;
+}
+
+@media (min-width: 1080px) {
+  .checklist--benefits .checklist__icon img { width: 45px; height: 45px; }
+}
 
 .checklist--benefits .checklist__item {
   align-items: flex-start;
   width: 100%;
+  gap: 2.4vw;
+}
+
+@media (min-width: 1080px) {
+  .checklist--benefits .checklist__item { gap: 26px; }
 }
 
 .checklist--benefits .checklist__item p {
   flex: 1;
   min-width: 0;
+  font-weight: 500;
+  font-size: 3.7vw;
   line-height: 1.35;
+}
+
+@media (min-width: 1080px) {
+  .checklist--benefits .checklist__item p { font-size: 40px; }
 }
 
 .benefits .btn--block {
