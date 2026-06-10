@@ -1,0 +1,14 @@
+services:
+  smm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bismuth_smm:latest
+    container_name: bismuth_smm
+    restart: unless-stopped
+    networks:
+      - shared_proxy
+
+networks:
+  shared_proxy:
+    external: true
