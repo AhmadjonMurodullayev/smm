@@ -176,22 +176,36 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .pill__text--lg { font-weight: 500; font-size: 3.7vw; }
 @media (min-width: 1080px) { .pill__text--lg { font-size: 40px; } }
 
-/* Title — 6155:18834 */
+/* Title — 6155:18834 + inline CTA 6185:267 */
 .title {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   font-family: 'Onest', sans-serif;
   font-weight: 700;
   font-size: 5.9vw;
   line-height: 1.4;
   text-transform: uppercase;
   margin-bottom: 4.6vw;
-  max-width: 90vw;
+  max-width: 100%;
 }
 
-@media (min-width: 1080px) { .title { font-size: 64px; margin-bottom: 50px; max-width: 968px; } }
+@media (min-width: 1080px) {
+  .title { font-size: 64px; margin-bottom: 50px; }
+}
 
 .title em { font-style: normal; font-weight: 900; color: var(--c-red); }
+
+.title__line {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.3vw;
+  white-space: nowrap;
+}
+
+@media (min-width: 1080px) {
+  .title__line { gap: 14px; }
+}
+
 
 /* Hero body — features + photo */
 .hero__body {
@@ -211,19 +225,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   flex-direction: column;
 }
 
-/* Hero checklist — kichikroq, keng qator (Figma 6178:206) */
+/* Hero checklist — Figma 6178:206 */
 .checklist--hero {
-  gap: 2vw;
-  width: 58%;
-  max-width: 560px;
+  gap: 2.78vw;
+  width: 45.2%;
   margin-left: -1.15vw;
 }
 
 @media (min-width: 1080px) {
   .checklist--hero {
-    gap: 22px;
+    gap: 30px;
     width: 488px;
-    max-width: none;
     margin-left: -12px;
   }
 }
@@ -231,23 +243,23 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .checklist__item {
   display: flex;
   align-items: center;
-  gap: 2vw;
+  gap: 2.4vw;
 }
 
-@media (min-width: 1080px) { .checklist__item { gap: 20px; } }
+@media (min-width: 1080px) { .checklist__item { gap: 26px; } }
 .checklist__item--top { align-items: flex-start; }
 
 .checklist--hero .checklist__icon {
-  width: 6.5vw;
-  height: 6.5vw;
-  border-radius: 1.1vw;
+  width: 8.4vw;
+  height: 8.4vw;
+  border-radius: 1.48vw;
 }
 
 @media (min-width: 1080px) {
   .checklist--hero .checklist__icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 12px;
+    width: 91px;
+    height: 91px;
+    border-radius: 16px;
   }
 }
 
@@ -260,12 +272,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .checklist--hero .checklist__icon img {
-  width: 3.2vw;
-  height: 3.2vw;
+  width: 4.2vw;
+  height: 4.2vw;
 }
 
 @media (min-width: 1080px) {
-  .checklist--hero .checklist__icon img { width: 32px; height: 32px; }
+  .checklist--hero .checklist__icon img { width: 45px; height: 45px; }
 }
 
 .checklist__icon img {
@@ -274,15 +286,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .checklist--hero .checklist__item p {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 3.2vw;
-  line-height: 1.15;
+  font-size: 3.7vw;
+  line-height: 1.2;
   flex: 1;
   min-width: 0;
 }
 
 @media (min-width: 1080px) {
-  .checklist--hero .checklist__item p { font-size: 28px; }
+  .checklist--hero .checklist__item p { font-size: 40px; }
 }
 
 /* Hero photo — 6155:18828 */
@@ -453,6 +466,48 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     padding: 0 40px;
     font-size: 50px;
   }
+}
+
+/* Inline CTA — Figma 6185:267 */
+.btn--cta.btn--cta--inline {
+  display: inline-flex;
+  vertical-align: middle;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  padding: 1.85vw 2.96vw;
+  border-radius: 2.78vw;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  line-height: 1;
+  gap: 1.3vw;
+}
+
+.btn--cta.btn--cta--inline span {
+  font-size: 2.96vw;
+  white-space: nowrap;
+}
+
+@media (min-width: 1080px) {
+  .btn--cta.btn--cta--inline {
+    padding: 20px 32px;
+    border-radius: 30px;
+    gap: 14px;
+  }
+
+  .btn--cta.btn--cta--inline span { font-size: 32px; }
+}
+
+.btn--cta.btn--cta--inline .btn__arrow {
+  width: 2.96vw;
+  height: 2.96vw;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+}
+
+@media (min-width: 1080px) {
+  .btn--cta.btn--cta--inline .btn__arrow { width: 32px; height: 32px; }
 }
 
 .btn--block {
