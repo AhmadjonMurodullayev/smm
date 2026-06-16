@@ -97,6 +97,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   align-items: center;
   gap: 1px;
   margin-bottom: 4.3vw;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (min-width: 1080px) { .logo { margin-bottom: 46px; } }
@@ -398,7 +400,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .card__avatar--orange span { width: .65vw; height: .65vw; border-radius: 50%; background: var(--c-orange); }
 @media (min-width: 1080px) { .card__avatar--blue span, .card__avatar--orange span { width: 7px; height: 7px; } }
 
-.card__name { font-weight: 600; font-size: 2vw; color: var(--c-black); }
+.card__name {
+  font-weight: 600;
+  font-size: 2vw;
+  color: var(--c-black);
+  text-decoration: none;
+}
+
+.card__name:hover { text-decoration: underline; }
 @media (min-width: 1080px) { .card__name { font-size: 22px; } }
 
 .card__rating {
@@ -422,6 +431,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .card__btn {
   width: 100%; padding: 1.3vw; border-radius: 1.1vw;
   font-weight: 500; font-size: 1.7vw; text-align: center;
+  text-decoration: none;
+  display: block;
 }
 @media (min-width: 1080px) { .card__btn { padding: 14px; border-radius: 12px; font-size: 18px; } }
 .card__btn--outline { background: var(--c-white); border: 2px solid var(--c-blue); color: var(--c-blue); }
@@ -549,11 +560,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .domain {
   position: relative;
   z-index: 5;
+  display: block;
   text-align: center;
   font-weight: 500;
   font-size: 3.7vw;
   line-height: 1.4;
+  text-decoration: none;
+  color: inherit;
 }
+
+.domain:hover { text-decoration: underline; }
 
 @media (min-width: 1080px) { .domain { font-size: 40px; } }
 
