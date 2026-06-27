@@ -243,15 +243,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .hero__body {
   position: relative;
   z-index: 1;
-  min-height: 52vw;
   margin-bottom: 0;
-}
-
-@media (min-width: 1080px) {
-  .hero__body {
-    min-height: 560px;
-    margin-bottom: 0;
-  }
 }
 
 /* Checklist — 6178:206 */
@@ -338,10 +330,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .checklist--hero .checklist__item p { font-size: 40px; }
 }
 
-/* Hero photo — 6155:18828, katta, o‘ng tomonda */
+/* Hero photo — 6155:18828, katta, o‘ng tomonda, Broker C ustiga tegib */
 .hero__photo {
   position: absolute;
-  top: -5.6vw;
+  top: auto;
+  bottom: calc(-3.7vw - 4.2vw + 0.55vw);
   right: -6.3vw;
   width: 58.7vw;
   max-width: 634px;
@@ -351,7 +344,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 @media (min-width: 1080px) {
   .hero__photo {
-    top: -60px;
+    bottom: -80px;
     right: -68px;
     width: 634px;
   }
@@ -372,9 +365,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   align-items: flex-end;
   justify-content: center;
   gap: 1.85vw;
-  margin-top: 2.8vw;
-  padding: 2.8vw 0 4.6vw;
+  margin-top: 3.7vw;
+  padding: 4.2vw 0 4.6vw;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -383,7 +377,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .cards::-webkit-scrollbar { display: none; }
 
 @media (min-width: 1080px) {
-  .cards { gap: 20px; margin-top: 24px; padding: 30px 0 50px; }
+  .cards { gap: 20px; margin-top: 40px; padding: 46px 0 50px; }
 }
 
 .card {
