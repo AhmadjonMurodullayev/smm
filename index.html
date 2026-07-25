@@ -128,7 +128,6 @@
           </a>
         </div>
 
-        <a href="https://bismuth.uz" class="domain">www.bismuth.uz</a>
       </section>
 
       <section class="benefits">
@@ -168,15 +167,31 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const currentParams = window.location.search;
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
 
-      if (!currentParams) return;
+    // UTM yo'q bo'lsa default qiymatlar qo'shiladi
+    if (!params.has("utm_source")) {
+        params.set("utm_source", "broker_landing");
+    }
 
-      document.querySelectorAll('a[href="https://bismuth.uz/register"]').forEach(link => {
-        link.href = `https://bismuth.uz/register${currentParams}`;
-      });
+    if (!params.has("utm_medium")) {
+        params.set("utm_medium", "landing");
+    }
+
+    if (!params.has("utm_campaign")) {
+        params.set("utm_campaign", "broker");
+    }
+
+    // Landing qaysi sahifadan o'tganini doim saqlab qolamiz
+    params.set("landing", "broker");
+
+    const query = params.toString();
+
+    document.querySelectorAll('a[href="https://bismuth.uz/register"]').forEach(link => {
+        link.href = `https://bismuth.uz/register?${query}`;
     });
-  </script>
+});
+</script>
 </body>
 </html>
